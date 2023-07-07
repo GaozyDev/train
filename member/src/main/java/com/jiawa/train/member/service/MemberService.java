@@ -11,6 +11,6 @@ public class MemberService {
     private MemberMapper memberMapper;
 
     public int count() {
-        return memberMapper.count();
+        return (int) memberMapper.countByExample(null);
     }
 }
