@@ -1,7 +1,7 @@
 package com.jiawa.train.member.controller;
 
 import com.jiawa.train.common.resp.CommonResp;
-import com.jiawa.train.common.resp.MemberLoginResp;
+import com.jiawa.train.member.resp.MemberLoginResp;
 import com.jiawa.train.member.req.MemberLoginReq;
 import com.jiawa.train.member.req.MemberRegisterReq;
 import com.jiawa.train.member.req.MemberSendCodeReq;

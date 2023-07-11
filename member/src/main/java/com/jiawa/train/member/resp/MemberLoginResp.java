@@ -1,9 +1,11 @@
-package com.jiawa.train.common.resp;
+package com.jiawa.train.member.resp;
 
 public class MemberLoginResp {
     private Long id;
 
     private String mobile;
+
+    private String token;
 
     public Long getId() {
         return id;
@@ -19,5 +21,13 @@ public class MemberLoginResp {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
