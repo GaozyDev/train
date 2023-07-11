@@ -1,5 +1,6 @@
 GET http://127.0.0.1:8000/member/member/count
 Accept: application/json
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE2ODkwNjY5MzYsIm1vYmlsZSI6IjEzMDAwMDAwMDAxIiwiaWQiOjE2Nzg2MTI3MTk3MzUwMTc0NzIsImV4cCI6MTY4OTEwMjkzNiwiaWF0IjoxNjg5MDY2OTM2fQ.Kh6XusvyxzseQeuEeQp-3er7U7bHjGrRE8VrlemY7SI
 
 ###
 

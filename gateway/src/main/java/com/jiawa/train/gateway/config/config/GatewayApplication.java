@@ -1,4 +1,4 @@
-package com.jiawa.train.gateway.config;
+package com.jiawa.train.gateway.config.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
