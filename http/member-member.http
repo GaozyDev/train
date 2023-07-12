@@ -1,6 +1,6 @@
 GET http://127.0.0.1:8000/member/member/count
 Accept: application/json
-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE2ODkwNjY5MzYsIm1vYmlsZSI6IjEzMDAwMDAwMDAxIiwiaWQiOjE2Nzg2MTI3MTk3MzUwMTc0NzIsImV4cCI6MTY4OTEwMjkzNiwiaWF0IjoxNjg5MDY2OTM2fQ.Kh6XusvyxzseQeuEeQp-3er7U7bHjGrRE8VrlemY7SI
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE2ODkxMzIzMDQsIm1vYmlsZSI6IjEzMDAwMDAwMDAxIiwiaWQiOjE2Nzg5Njg2NjgyMDMxMjY3ODQsImV4cCI6MTY4OTE2ODMwNCwiaWF0IjoxNjg5MTMyMzA0fQ.wsiWtMFVoLMU0X_n7J0HfVE1g-JMFvA1nUhSIw9_KBc
 
 ###
 
@@ -10,6 +10,7 @@ Content-Type: application/x-www-form-urlencoded
 mobile=1234
 
 ###
+
 POST http://localhost:8000/member/member/send-code
 Content-Type: application/json
 
