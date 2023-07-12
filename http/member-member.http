@@ -1,7 +1,6 @@
 GET http://127.0.0.1:8000/member/member/count
 Accept: application/json
-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE2ODkxMzIzMDQsIm1vYmlsZSI6IjEzMDAwMDAwMDAxIiwiaWQiOjE2Nzg5Njg2NjgyMDMxMjY3ODQsImV4cCI6MTY4OTE2ODMwNCwiaWF0IjoxNjg5MTMyMzA0fQ.wsiWtMFVoLMU0X_n7J0HfVE1g-JMFvA1nUhSIw9_KBc
-
+token: {{token}}
 ###
 
 POST http://localhost:8000/member/member/register
@@ -26,5 +25,11 @@ Content-Type: application/json
   "mobile": "13000000001",
   "code": "8888"
 }
+
+> {%
+  client.log(JSON.stringify(response.body));
+  client.log(JSON.stringify(response.body.content.token));
+  client.global.set("token", response.body.content.token);
+%}
 
 ###

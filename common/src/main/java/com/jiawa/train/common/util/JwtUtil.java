@@ -20,7 +20,7 @@ public class JwtUtil {
 
     public static String createToken(Long id, String mobile) {
         DateTime now = DateTime.now();
-        DateTime expTime = now.offsetNew(DateField.HOUR, 10);
+        DateTime expTime = now.offsetNew(DateField.HOUR, 24);
         Map<String, Object> payload = new HashMap<>();
         payload.put(JWTPayload.ISSUED_AT, now);
         payload.put(JWTPayload.EXPIRES_AT, expTime);
