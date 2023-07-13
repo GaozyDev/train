@@ -1,4 +1,4 @@
-package com.jiawa.train.business.controller;
+package com.jiawa.train.business.controller.admin;
 
 import com.jiawa.train.common.context.LoginMemberContext;
 import com.jiawa.train.common.resp.CommonResp;

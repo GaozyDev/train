@@ -1,4 +1,4 @@
-package com.jiawa.train.business.controller;
+package com.jiawa.train.business.controller.admin;
 
 import com.jiawa.train.business.req.TrainQueryReq;
 import com.jiawa.train.business.req.TrainSaveReq;
