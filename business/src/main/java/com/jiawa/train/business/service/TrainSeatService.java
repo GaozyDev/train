@@ -100,6 +100,7 @@ public class TrainSeatService {
                 for (SeatColEnum seatColEnum : colEnumList) {
                     TrainSeat trainSeat = new TrainSeat();
                     trainSeat.setId(SnowUtil.getSnowflakeNextId());
+                    trainSeat.setTrainCode(trainCode);
                     trainSeat.setCarriageIndex(trainCarriage.getIndex());
                     trainSeat.setRow(StrUtil.fillBefore(String.valueOf(row), '0', 2));
                     trainSeat.setCol(seatColEnum.getCode());
