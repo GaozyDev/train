@@ -1,48 +1,66 @@
-package com.jiawa.train.business.resp;
+package com.jiawa.train.business.req;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.Date;
 
-public class TrainSeatQueryResp {
+public class DailyTrainSeatSaveReq {
 
     /**
      * id
      */
-    @JsonSerialize(using= ToStringSerializer.class)
     private Long id;
+
+    /**
+     * 日期
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    @NotNull(message = "【日期】不能为空")
+    private Date date;
 
     /**
      * 车次编号
      */
+    @NotBlank(message = "【车次编号】不能为空")
     private String trainCode;
 
     /**
-     * 厢序
+     * 箱序
      */
+    @NotNull(message = "【箱序】不能为空")
     private Integer carriageIndex;
 
     /**
      * 排号|01, 02
      */
+    @NotBlank(message = "【排号】不能为空")
     private String row;
 
     /**
      * 列号|枚举[SeatColEnum]
      */
+    @NotBlank(message = "【列号】不能为空")
     private String col;
 
     /**
      * 座位类型|枚举[SeatTypeEnum]
      */
+    @NotBlank(message = "【座位类型】不能为空")
     private String seatType;
 
     /**
-     * 同车厢座序
+     * 同车箱座序
      */
+    @NotNull(message = "【同车箱座序】不能为空")
     private Integer carriageSeatIndex;
+
+    /**
+     * 售卖情况|将经过的车站用01拼接，0表示可卖，1表示已卖
+     */
+    @NotBlank(message = "【售卖情况】不能为空")
+    private String sell;
 
     /**
      * 新增时间
@@ -62,6 +80,14 @@ public class TrainSeatQueryResp {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getTrainCode() {
@@ -112,6 +138,14 @@ public class TrainSeatQueryResp {
         this.carriageSeatIndex = carriageSeatIndex;
     }
 
+    public String getSell() {
+        return sell;
+    }
+
+    public void setSell(String sell) {
+        this.sell = sell;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -135,12 +169,14 @@ public class TrainSeatQueryResp {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
+        sb.append(", date=").append(date);
         sb.append(", trainCode=").append(trainCode);
         sb.append(", carriageIndex=").append(carriageIndex);
         sb.append(", row=").append(row);
         sb.append(", col=").append(col);
         sb.append(", seatType=").append(seatType);
         sb.append(", carriageSeatIndex=").append(carriageSeatIndex);
+        sb.append(", sell=").append(sell);
         sb.append(", createTime=").append(createTime);
         sb.append(", updateTime=").append(updateTime);
         sb.append("]");

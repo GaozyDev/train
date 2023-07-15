@@ -17,6 +17,7 @@ public class TrainSeatQueryReq extends PageReq {
     @Override
     public String toString() {
         return "TrainSeatQueryReq{" +
+                "trainCode='" + trainCode + '\'' +
                 "} " + super.toString();
     }
 }

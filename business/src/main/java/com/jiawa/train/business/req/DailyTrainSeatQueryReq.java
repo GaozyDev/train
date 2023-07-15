@@ -2,7 +2,7 @@ package com.jiawa.train.business.req;
 
 import com.jiawa.train.common.req.PageReq;
 
-public class TrainCarriageQueryReq extends PageReq {
+public class DailyTrainSeatQueryReq extends PageReq {
 
     private String trainCode;
 
@@ -16,7 +16,7 @@ public class TrainCarriageQueryReq extends PageReq {
 
     @Override
     public String toString() {
-        return "TrainCarriageQueryReq{" +
+        return "DailyTrainSeatQueryReq{" +
                 "trainCode='" + trainCode + '\'' +
                 "} " + super.toString();
     }

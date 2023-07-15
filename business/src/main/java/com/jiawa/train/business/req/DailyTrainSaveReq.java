@@ -6,12 +6,19 @@ import jakarta.validation.constraints.NotNull;
 
 import java.util.Date;
 
-public class TrainSaveReq {
+public class DailyTrainSaveReq {
 
     /**
      * id
      */
     private Long id;
+
+    /**
+     * 日期
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    @NotNull(message = "【日期】不能为空")
+    private Date date;
 
     /**
      * 车次编号
@@ -81,6 +88,14 @@ public class TrainSaveReq {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getCode() {
@@ -170,6 +185,7 @@ public class TrainSaveReq {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
+        sb.append(", date=").append(date);
         sb.append(", code=").append(code);
         sb.append(", type=").append(type);
         sb.append(", start=").append(start);
