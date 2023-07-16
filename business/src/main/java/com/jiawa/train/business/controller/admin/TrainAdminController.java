@@ -52,4 +52,5 @@ public class TrainAdminController {
         trainSeatService.genTrainSeat(trainCode);
         return new CommonResp<>();
     }
+
 }

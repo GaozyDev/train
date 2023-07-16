@@ -42,4 +42,5 @@ public class StationAdminController {
         List<StationQueryResp> list = stationService.queryAll();
         return new CommonResp<>(list);
     }
+
 }

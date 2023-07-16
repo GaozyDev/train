@@ -36,10 +36,12 @@ public class TrainStationService {
         TrainStation trainStation = BeanUtil.copyProperties(req, TrainStation.class);
         if (ObjectUtil.isNull(trainStation.getId())) {
 
+            // 保存之前，先校验唯一键是否存在
             TrainStation trainStationDB = selectByUnique(req.getTrainCode(), req.getIndex());
             if (ObjectUtil.isNotEmpty(trainStationDB)) {
                 throw new BusinessException(BusinessExceptionEnum.BUSINESS_TRAIN_STATION_INDEX_UNIQUE_ERROR);
             }
+            // 保存之前，先校验唯一键是否存在
             trainStationDB = selectByUnique(req.getTrainCode(), req.getName());
             if (ObjectUtil.isNotEmpty(trainStationDB)) {
                 throw new BusinessException(BusinessExceptionEnum.BUSINESS_TRAIN_STATION_NAME_UNIQUE_ERROR);
@@ -85,7 +87,7 @@ public class TrainStationService {
         TrainStationExample trainStationExample = new TrainStationExample();
         trainStationExample.setOrderByClause("train_code asc, `index` asc");
         TrainStationExample.Criteria criteria = trainStationExample.createCriteria();
-        if(ObjectUtil.isNotEmpty(req.getTrainCode())) {
+        if (ObjectUtil.isNotEmpty(req.getTrainCode())) {
             criteria.andTrainCodeEqualTo(req.getTrainCode());
         }
 
@@ -108,5 +110,12 @@ public class TrainStationService {
 
     public void delete(Long id) {
         trainStationMapper.deleteByPrimaryKey(id);
+    }
+
+    public List<TrainStation> selectByTrainCode(String trainCode) {
+        TrainStationExample trainStationExample = new TrainStationExample();
+        trainStationExample.setOrderByClause("`index` asc");
+        trainStationExample.createCriteria().andTrainCodeEqualTo(trainCode);
+        return trainStationMapper.selectByExample(trainStationExample);
     }
 }

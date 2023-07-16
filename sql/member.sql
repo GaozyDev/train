@@ -1,5 +1,3 @@
-create database train_member default character set utf8mb4 collate utf8mb4_unicode_ci;
-
 drop table if exists `member`;
 create table `member`
 (
@@ -19,10 +17,8 @@ create table `passenger`
     `id_card`     varchar(18) not null comment '身份证',
     `type`        char(1)     not null comment '旅客类型|枚举[PassengerTypeEnum]',
     `create_time` datetime(3) comment '新增时间',
-    `update_time` datetime(3) comment '更新时间',
+    `update_time` datetime(3) comment '修改时间',
     primary key (`id`),
     index `member_id_index` (`member_id`)
 ) engine = innodb
-  default charset = utf8mb4 comment '乘车人';
-
-
+  default charset = utf8mb4 comment = '乘车人';
